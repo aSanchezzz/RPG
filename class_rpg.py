@@ -4,7 +4,7 @@ class Hero:
         self.power = 5
     def attack(self, goblin):
         goblin.health -= self.power
-        print("You do {} damage to the goblin.".format(hero_power))
+        print("You do {} damage to the goblin.".format(self.power))
         if goblin.health <= 0:
             print("The goblin is dead.")
     def alive(self):
@@ -14,7 +14,7 @@ class Hero:
             return False
     def print_status(self):
         while self.health > 0:
-            print("You have {} health and {} power.".format(hero_health, hero_power))
+            print("You have {} health and {} power.".format(self.health, self.power))
 
 class Goblin:
     def __init__(self, health, power):
@@ -32,4 +32,10 @@ class Goblin:
             return False
     def print_status(self):
         while self.health > 0:
-            print("The goblin has {} health and {} power.".format(goblin_health, goblin_power))
+            print("The goblin has {} health and {} power.".format(self.health, self.power))
+
+#generic character class for both hero and goblin to inherit
+class Character:
+    def __init__(self, health, power):
+        self.health = health
+        self.power = power
