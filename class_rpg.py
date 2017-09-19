@@ -26,7 +26,7 @@ class Goblin:
         if hero.health <= 0:
             print("You are dead.")
     def alive(self):
-        if self.helth > 0:
+        if self.health > 0:
             return True
         else:
             return False
@@ -39,3 +39,8 @@ class Character:
     def __init__(self, health, power):
         self.health = health
         self.power = power
+    def alive(self):
+        if self.health > 0:
+            return True
+        else:
+            return False
